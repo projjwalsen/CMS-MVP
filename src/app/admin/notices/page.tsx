@@ -230,7 +230,7 @@ export default function NoticesPage() {
     })
   }
 
-  const getPriorityColor = (priority: string): 'destructive' | 'default' | 'secondary' | 'outline' => {
+  const getPriorityColor = (priority: 'High' | 'Medium' | 'Low'): 'destructive' | 'default' | 'secondary' | 'outline' => {
     switch (priority) {
       case 'High': return 'destructive'
       case 'Medium': return 'default'
@@ -239,7 +239,7 @@ export default function NoticesPage() {
     }
   }
 
-  const getScopeColor = (scope: string): 'default' | 'secondary' | 'outline' => {
+  const getScopeColor = (scope: 'Global' | 'Section' | 'Student'): 'default' | 'secondary' | 'outline' => {
     switch (scope) {
       case 'Global': return 'default'
       case 'Section': return 'secondary'

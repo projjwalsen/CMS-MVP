@@ -24,7 +24,7 @@ const kpiData = [
     icon: GraduationCap,
   },
   {
-    title: "Today's Classes",
+    title: "Today&apos;s Classes",
     value: '24',
     change: '0%',
     changeType: 'neutral' as const,

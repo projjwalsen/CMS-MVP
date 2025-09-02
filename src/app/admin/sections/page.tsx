@@ -198,7 +198,7 @@ export default function SectionsPage() {
     toast.success('Demo data imported successfully')
   }
 
-  const getEnrollmentStatus = (enrolled: number, capacity: number): { color: 'destructive' | 'default' | 'secondary' | 'outline', text: string } => {
+  const getEnrollmentStatus = (enrolled: number, capacity: number): { color: 'destructive' | 'default' | 'secondary' | 'outline' | null | undefined, text: string } => {
     const percentage = (enrolled / capacity) * 100
     if (percentage >= 90) return { color: 'destructive', text: 'Full' }
     if (percentage >= 75) return { color: 'default', text: 'High' }
