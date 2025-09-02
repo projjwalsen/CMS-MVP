@@ -65,7 +65,7 @@ export default function RFIDSimulator() {
       // Clear form
       setRfidTag('')
       setReaderId('')
-    } catch (error) {
+    } catch {
       toast.error('Failed to send RFID event')
     }
   }

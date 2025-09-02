@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { Calendar, Clock, BookOpen, Users, Bell, CheckCircle, XCircle, AlertCircle, GraduationCap, TrendingUp, Award } from 'lucide-react'
+import { Calendar, Clock, BookOpen, Bell, CheckCircle, XCircle, AlertCircle, TrendingUp, Award } from 'lucide-react'
 
 interface Class {
   id: string
@@ -192,7 +192,7 @@ export default function StudentDashboard() {
                   <div className="p-2 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl mr-3 shadow-lg">
                     <Calendar className="h-5 w-5 text-white" />
                   </div>
-                  <span className="text-2xl font-semibold text-foreground">Today's Schedule</span>
+                  <span className="text-2xl font-semibold text-foreground">Today&apos;s Schedule</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>

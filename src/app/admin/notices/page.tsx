@@ -230,7 +230,7 @@ export default function NoticesPage() {
     })
   }
 
-  const getPriorityColor = (priority: string) => {
+  const getPriorityColor = (priority: string): 'destructive' | 'default' | 'secondary' | 'outline' => {
     switch (priority) {
       case 'High': return 'destructive'
       case 'Medium': return 'default'
@@ -239,7 +239,7 @@ export default function NoticesPage() {
     }
   }
 
-  const getScopeColor = (scope: string) => {
+  const getScopeColor = (scope: string): 'default' | 'secondary' | 'outline' => {
     switch (scope) {
       case 'Global': return 'default'
       case 'Section': return 'secondary'
@@ -445,7 +445,7 @@ export default function NoticesPage() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <Badge variant={getScopeColor(notice.scope) as any}>
+                      <Badge variant={getScopeColor(notice.scope)}>
                         {notice.scope}
                       </Badge>
                     </TableCell>
@@ -453,7 +453,7 @@ export default function NoticesPage() {
                       {notice.targetName || '-'}
                     </TableCell>
                     <TableCell>
-                      <Badge variant={notice.priority === 'High' ? undefined : getPriorityColor(notice.priority) as any} className={notice.priority === 'High' ? 'bg-primary text-white rounded-full border-transparent hover:bg-primary/90 !text-white' : ''}>
+                      <Badge variant={notice.priority === 'High' ? 'default' : getPriorityColor(notice.priority)} className={notice.priority === 'High' ? 'bg-primary text-white rounded-full border-transparent hover:bg-primary/90 !text-white' : ''}>
                         {notice.priority}
                       </Badge>
                     </TableCell>

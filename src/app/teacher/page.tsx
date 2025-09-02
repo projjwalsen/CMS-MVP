@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+
 import { Clock, MapPin, Users, CheckCircle, XCircle, AlertCircle, Download, Bell, Calendar, ArrowLeft, Sparkles, TrendingUp, Wifi } from 'lucide-react'
 import { format } from 'date-fns'
 import { toast } from 'sonner'
 
-// Mock data for today's classes
+// Mock data for today&apos;s classes
 const todaysClasses = [
   {
     id: 1,
@@ -82,6 +82,15 @@ interface Student {
   checkInTime: Date | null
 }
 
+interface ClassItem {
+  id: number
+  time: string
+  course: string
+  section: string
+  room: string
+  status: string
+}
+
 export default function TeacherDashboard() {
   const [currentClass, setCurrentClass] = useState(todaysClasses.find(c => c.status === 'current'))
   const [students, setStudents] = useState<Student[]>(mockStudents)
@@ -112,7 +121,7 @@ export default function TeacherDashboard() {
     return () => clearInterval(interval)
   }, [isAttendanceOpen, students])
 
-  const handleOpenAttendance = (classItem: any) => {
+  const handleOpenAttendance = (classItem: ClassItem) => {
     setCurrentClass(classItem)
     setIsAttendanceOpen(true)
   }
@@ -147,16 +156,7 @@ export default function TeacherDashboard() {
     }
   }
 
-  const getClassStatusGradient = (status: string) => {
-    switch (status) {
-      case 'current':
-        return 'from-green-500 to-emerald-500'
-      case 'upcoming':
-        return 'from-blue-500 to-violet-500'
-      default:
-        return 'from-gray-500 to-slate-500'
-    }
-  }
+
 
   const getStatusIcon = (status: string) => {
     switch (status) {
@@ -458,12 +458,12 @@ export default function TeacherDashboard() {
           </p>
         </div>
 
-        {/* Today's Classes */}
+        {/* Today&apos;s Classes */}
         <Card className="rounded-2xl shadow-sm">
           <CardHeader>
             <CardTitle className="flex items-center">
               <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-              Today's Classes
+              Today&apos;s Classes
             </CardTitle>
           </CardHeader>
           <CardContent>

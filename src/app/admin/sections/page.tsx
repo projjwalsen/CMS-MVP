@@ -198,7 +198,7 @@ export default function SectionsPage() {
     toast.success('Demo data imported successfully')
   }
 
-  const getEnrollmentStatus = (enrolled: number, capacity: number) => {
+  const getEnrollmentStatus = (enrolled: number, capacity: number): { color: 'destructive' | 'default' | 'secondary' | 'outline', text: string } => {
     const percentage = (enrolled / capacity) * 100
     if (percentage >= 90) return { color: 'destructive', text: 'Full' }
     if (percentage >= 75) return { color: 'default', text: 'High' }
@@ -388,7 +388,7 @@ export default function SectionsPage() {
                         </div>
                       </TableCell>
                       <TableCell>
-                        <Badge variant={status.color as any}>{status.text}</Badge>
+                        <Badge variant={status.color}>{status.text}</Badge>
                       </TableCell>
                       <TableCell>
                         <div className="flex space-x-2">

@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
-import { Badge } from '@/components/ui/badge'
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Plus, Edit, Trash2, Clock } from 'lucide-react'
 import { toast } from 'sonner'
@@ -26,7 +26,7 @@ interface TimeSlot {
 }
 
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const periods = [1, 2, 3, 4, 5, 6, 7, 8]
+
 const timeSlots = [
   { period: 1, start: '08:00', end: '09:00' },
   { period: 2, start: '09:00', end: '10:00' },
@@ -123,8 +123,7 @@ export default function TimetablePage() {
   const [timetable, setTimetable] = useState<TimeSlot[]>(mockTimetable)
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
   const [editingSlot, setEditingSlot] = useState<TimeSlot | null>(null)
-  const [selectedDay, setSelectedDay] = useState<string>('')
-  const [selectedPeriod, setSelectedPeriod] = useState<number>(0)
+
   const [formData, setFormData] = useState({
     day: '',
     period: 1,
@@ -147,8 +146,6 @@ export default function TimetablePage() {
       handleEdit(existingSlot)
     } else {
       const timeSlot = timeSlots.find(t => t.period === period)
-      setSelectedDay(day)
-      setSelectedPeriod(period)
       setFormData({
         day,
         period,
