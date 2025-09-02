@@ -192,7 +192,7 @@ export default function StudentDashboard() {
                   <div className="p-2 bg-gradient-to-br from-blue-500 to-violet-500 rounded-xl mr-3 shadow-lg">
                     <Calendar className="h-5 w-5 text-white" />
                   </div>
-                  <span className="text-2xl font-semibold text-foreground">Today&apos;s Schedule</span>
+                  <span className="text-2xl font-semibold text-foreground">Today&rsquo;s Schedule</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>

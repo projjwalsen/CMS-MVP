@@ -118,7 +118,7 @@ export default function AdminDashboard() {
             <Sparkles className="w-6 h-6 text-teal-500 animate-pulse" />
           </div>
           <p className="text-slate-700 dark:text-muted-foreground font-light text-lg ml-5">
-            Welcome back! Here&apos;s what&apos;s happening at your college today.
+            Welcome back! Here&rsquo;s what&rsquo;s happening at your college today.
           </p>
         </div>
 

@@ -463,7 +463,7 @@ export default function TeacherDashboard() {
           <CardHeader>
             <CardTitle className="flex items-center">
               <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-              Today&apos;s Classes
+              Today&rsquo;s Classes
             </CardTitle>
           </CardHeader>
           <CardContent>
